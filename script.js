@@ -20,21 +20,21 @@ function appendData(data) {
 }
 
 function filterTable() {
-  var input, table, tr, td, tdTxtValue;
+  var input, table, tr, tdTitle, tdBody, tdTitleTxtValue, tdBodyTxtValue;
   input = document.getElementById("searchBar").value.toUpperCase();
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
   for (var i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td");
-    for (var j = 2; j < td.length; j++){
-      if (td[j]) {
-        tdTxtValue = td[j].textContent || td[j].innerText;
-        if (tdTxtValue.toUpperCase().indexOf(input) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
+    tdTitle = tr[i].getElementsByTagName("td")[2];
+    tdBody = tr[i].getElementsByTagName("td")[3];
+    if (tdTitle && tdBody) {
+      tdTitleTxtValue = tdTitle.textContent || tdTitle.innerText;
+      tdBodyTxtValue = tdBody.textContent || tdBody.innerText;
+      if (tdTitleTxtValue.toUpperCase().indexOf(input) > -1 || tdBodyTxtValue.toUpperCase().indexOf(input) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
       }
-    }
+    }       
   }
 }
