@@ -2,11 +2,14 @@ body {
   text-align: center;
 }
 
+input {
+  size: 50%;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  text-align: center;
 }
 
 td, th {
