@@ -26,14 +26,16 @@ function filterTable() {
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
   for (var i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      tdTxtValue = td.textContent || td.innerText;
-      if (tdTxtValue.toUpperCase().indexOf(input) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
+    td = tr[i].getElementsByTagName("td");
+    for (var j = 0; j < td.length; j++){
+      if (td[j]) {
+        tdTxtValue = td[j].textContent || td[j].innerText;
+        if (tdTxtValue.toUpperCase().indexOf(input) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
       }
-    }       
+    }
   }
 }
