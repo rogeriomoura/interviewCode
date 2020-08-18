@@ -20,6 +20,7 @@ function appendData(data) {
 }
 
 function filterTable() {
+  console.log(`------INSIDE filterTable!`);
   var input, table, tr, td, tdTxtValue;
   input = document.getElementById("searchBar").value.toUpperCase();
   table = document.getElementById("table");
