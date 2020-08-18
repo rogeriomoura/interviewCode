@@ -18,3 +18,21 @@ function appendData(data) {
     mainContainer.appendChild(tr);
   }
 }
+
+function filterTable() {
+  var input, table, tr, td, tdTxtValue;
+  input = document.getElementById("searchBar").value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (var i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      tdTxtValue = td.textContent || td.innerText;
+      if (tdTxtValue.toUpperCase().indexOf(filter) >= 0) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
