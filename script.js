@@ -26,7 +26,7 @@ function filterTable() {
   tr = table.getElementsByTagName("tr");
   for (var i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td");
-    for (var j = 0; j < td.length; j++){
+    for (var j = 2; j < td.length; j++){
       if (td[j]) {
         tdTxtValue = td[j].textContent || td[j].innerText;
         if (tdTxtValue.toUpperCase().indexOf(input) > -1) {
