@@ -28,7 +28,7 @@ function filterTable() {
     td = tr[i].getElementsByTagName("td")[0];
     if (td) {
       tdTxtValue = td.textContent || td.innerText;
-      if (tdTxtValue.toUpperCase().indexOf(filter) >= 0) {
+      if (tdTxtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
